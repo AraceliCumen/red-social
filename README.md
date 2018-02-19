@@ -1,7 +1,14 @@
-# Red Social: Condominium NET
-Unidad: Producto Final
+# Proyecto: Condominium Net
+
+Condominium Net, es una red Social, en la que puedes compartir información (publicaciones, fotos, avios,etc.) con la red de propietarios de  tu condominio. Prueba el proyecto logueandote con tu cuenta Google o Registrandote.
+
+![condominium](https://user-images.githubusercontent.com/32307611/36379364-42c57294-154c-11e8-9e08-26275990acd4.PNG)
+
+## Desarrollado para 
+[Laboratoria](http://laboratoria.la)
+
 ***
-#### Alumnas:
+#### Colaboradoras:
   - Araceli Cumen Cueva
   - Pamela Rojas Vega
 
