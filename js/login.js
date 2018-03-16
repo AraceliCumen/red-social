@@ -78,7 +78,7 @@ $(document).ready(function() {
     var $provider = new firebase.auth.GoogleAuthProvider();
     $provider.addScope('https://www.googleapis.com/auth/contacts.readonly');
     firebase.auth().getRedirectResult().then(function(result) {
-      consolelog(result.user);
+      console.log(result.user);
       // if (result.credential) {
       //   // This gives you a Google Access Token. You can use it to access the Google API.
       //   var token = result.credential.accessToken;
