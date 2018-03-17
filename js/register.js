@@ -23,7 +23,7 @@ $(document).ready(function() {
   firebase.initializeApp($config);
   // Obtener Elementos
   var $txtUsername = $('#name');
-  var $txttype = $('#type');
+  var $txttype = $('#tipe');
   var $txttorredepart = $('#torredepart');
   var $txtEmail = $('#email');
   var $txtPassword = $('#password');
@@ -44,6 +44,7 @@ $(document).ready(function() {
   // Aqui indicar que se puede implementar la función como variable
   function activeButton() {
     if (validateUsername && validateType && validatetorredepart && validateEmail && validatePassword && validateConfirmPassword && validateChecked) {
+      console.log('se activo');
       $btnSignup.removeClass('disabled');
     }
   }
@@ -61,7 +62,7 @@ $(document).ready(function() {
   });
 
   $txttype.on('input', function(event) {
-    if ($(this).val().length > 5) {
+    if ($(this).val().length > 4) {
       validateType = true;
       localStorage.type = $(this).val();
     }
@@ -130,6 +131,7 @@ $(document).ready(function() {
 
   // añadivos evento al signup
   $btnSignup.on('click', function(event) {
+    console.log('entré');
     // Obtnemos los valores de los campos
     // var $userName = $txtUsername.val();
     // var $lastName = $txtLastName.val();
@@ -137,7 +139,6 @@ $(document).ready(function() {
     var $pass = $txtPassword.val();
     var $promise = $auth.createUserWithEmailAndPassword($email, $pass);
     $promise.catch(event => alert(event.message));
-
     window.location.href = 'start.html';
   });
 
