@@ -8,6 +8,7 @@ $(document).ready(function() {
   var $comment = $('#comment');
   var $commentBox = $('#commentBox');
   var $btnComment = $('#btnComment');
+  var $email =$('email')
   moment.locale('es');
   var $date = moment().format('lll');
 

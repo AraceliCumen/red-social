@@ -174,7 +174,7 @@ nav {
 /* INICIO MEDIA QUERIES */
 @media screen and (max-width: 768px){
   #font-screen {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
   }
 }
 /* FIN MEDIA QUERIES */

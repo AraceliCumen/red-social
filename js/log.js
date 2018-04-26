@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(function () {
   // Initialize Firebase
   var config = {
     apiKey: 'AIzaSyDazYh5bEK6rNBj1X6VGa1QFuN_wsvUSs4',
@@ -33,10 +33,10 @@ $(document).ready(function() {
     $btnSignup.addClass('disabled');
   }
 
-  $txtEmail.on('input', function(event) {
+  $txtEmail.on('input', function (event) {
     // console.log(event.target.value);
     localStorage.mail = event.target.value;
-    console.log(localStorage.mail);
+    // console.log(localStorage.mail);
     var REGEXEMAIL = /^[a-zA-Z0-9\._-]+@[a-zA-Z0-9-]{2,}[.][a-zA-Z]{2,3}$/;
     // console.log(REGEXEMAIL.test($(this).val()));
     // console.log($(this).val());
@@ -50,7 +50,7 @@ $(document).ready(function() {
     console.log(validateEmail);
   });
 
-  $txtPassword.on('input', function() {
+  $txtPassword.on('input', function () {
     console.log($(this).val());
     if ($(this).val().length >= 6) {
       validatePassword = true;
@@ -63,7 +63,7 @@ $(document).ready(function() {
   var $auth = firebase.auth();
 
   // añadivos evento al signup
-  $btnSignup.on('click', function(event) {
+  $btnSignup.on('click', function (event) {
     // Obtnemos los valores de los campos
     var $email = $txtEmail.val();
     var $pass = $txtPassword.val();
@@ -83,23 +83,25 @@ $(document).ready(function() {
     });
   });
 
-  $btnLogGoogle.on('click', function(event) {
+  $btnLogGoogle.on('click', function (event) {
     var $provider = new firebase.auth.GoogleAuthProvider();
     // $provider.addScope('https://www.googleapis.com/auth/contacts.readonly');
-    firebase.auth().signInWithPopup($provider).then(function(result) {
-      window.location.href = 'start.html';
+    firebase.auth().signInWithPopup($provider).then(function (result) {
       console.log(result.user);
       // guardando la imagen y nombre;
       localStorage.photo = result.user.photoURL;
       localStorage.name = result.user.displayName;
       localStorage.id = result.user.uid;
+      localStorage.email = result.user.email;
+      // console.log(localStorage.email);
+      window.location.href = 'start.html';
       guardarFirebase(result.user);
       // This gives you a Google Access Token. You can use it to access the Google API.
       var token = result.credential.accessToken;
       // The signed-in user info.
       var user = result.user;
       // ...
-    }).catch(function(error) {
+    }).catch(function (error) {
       // Handle Errors here.
       var errorCode = error.code;
       var errorMessage = error.message;
